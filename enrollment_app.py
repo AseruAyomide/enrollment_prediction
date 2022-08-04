@@ -33,9 +33,8 @@ st.subheader("Enter details below")
 
 my_form = st.form(key='form1')
 
-year = int(my_form.text_input(
-     "Enter the new enrollment value"
-     ))
+year = my_form.text_input(
+     "Enter the new enrollment value")
 
 gender = my_form.selectbox(
      "Which gender saw an increse in this new session",
