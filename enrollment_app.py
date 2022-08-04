@@ -33,7 +33,7 @@ st.subheader("Enter details below")
 
 my_form = st.form(key='form1')
 
-year = int(my_form.text_input(
+year = int(my_form.number_input(
      "Enter the new enrollment value"))
 
 gender = my_form.selectbox(
@@ -51,8 +51,6 @@ yourself = my_form.selectbox(
 location = my_form.selectbox(
      "Did the greater percentage of students enroll into RUN due to the location of the school?",
      ('Yes', 'No'))
-st.write('---')
-
 
 if my_form.form_submit_button('Predict'):
     model = joblib.load('enrol_pred_model.pickle')
@@ -61,6 +59,7 @@ if my_form.form_submit_button('Predict'):
         gender, year, means, yourself, location]], columns = [
             'Year', 'Gender', 'Means', 'Yourself', 'Location'])
 
+        
     if year > 2275 : 
         ent = [1]
     else :
