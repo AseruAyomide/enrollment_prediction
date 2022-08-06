@@ -5,7 +5,7 @@
 
 # ## Import Libraries
 
-# In[2]:
+# In[1]:
 
 
 import streamlit as st
@@ -19,7 +19,7 @@ from sklearn.model_selection import train_test_split
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-# In[3]:
+# In[2]:
 
 
 # st.title("""
@@ -35,38 +35,38 @@ print(data.shape)
 data
 
 
-# In[4]:
+# In[3]:
 
 
 data.describe()
 
 
-# In[5]:
+# In[4]:
 
 
 data.shape
 
 
-# In[6]:
+# In[5]:
 
 
 data.columns
 
 
-# In[7]:
+# In[6]:
 
 
 data_df = pd.DataFrame(data)
 data_df
 
 
-# In[8]:
+# In[7]:
 
 
 # st.write('Data Analysis')
 
 
-# In[9]:
+# In[8]:
 
 
 total_rows = len(data_df.index)
@@ -74,42 +74,42 @@ total_rows = len(data_df.index)
 
 # ### Age Range
 
-# In[10]:
+# In[9]:
 
 
 Age_less16 = data_df['Age_range'].value_counts()[0]
 Age_less16 = int((Age_less16/total_rows)*100)
 
 
-# In[11]:
+# In[10]:
 
 
 Age_16 = data_df['Age_range'].value_counts()[1]
 Age_16 = int((Age_16/total_rows)*100)
 
 
-# In[12]:
+# In[11]:
 
 
 Age_17 = data_df['Age_range'].value_counts()[2]
 Age_17 = int((Age_17/total_rows)*100)
 
 
-# In[13]:
+# In[12]:
 
 
 Age_18 = data_df['Age_range'].value_counts()[3]
 Age_18 = int((Age_18/total_rows)*100)
 
 
-# In[14]:
+# In[13]:
 
 
 Age_over18 = data_df['Age_range'].value_counts()[4]
 Age_over18 = int((Age_over18/total_rows)*100)
 
 
-# In[15]:
+# In[14]:
 
 
 Age = pd.DataFrame({'Age range': [0, 1, 2,3,4],
@@ -118,21 +118,21 @@ Age
 #st.write("The table below shows the percentage of student who enrolled into Redeemers Uiversity (RUN) at different ages", Age)
 
 
-# In[16]:
+# In[15]:
 
 
 jamb_admin = data_df['Admission_means'].value_counts()[0]
 jamb_admin = int((jamb_admin/total_rows)*100)
 
 
-# In[17]:
+# In[16]:
 
 
 direct_admin = data_df['Admission_means'].value_counts()[1]
 direct_admin = int((direct_admin/total_rows)*100)
 
 
-# In[18]:
+# In[17]:
 
 
 trans_admin = data_df['Admission_means'].value_counts()[2]
@@ -141,7 +141,7 @@ trans_admin = int((trans_admin/total_rows)*100)
 
 # ### Factors
 
-# In[19]:
+# In[18]:
 
 
 location_fac = data_df['Factors_Location'].value_counts()[1]
@@ -149,7 +149,7 @@ location_fac
 loca = int((location_fac/total_rows)*100)
 
 
-# In[20]:
+# In[19]:
 
 
 course_fac = data_df['Factors_Course'].value_counts()[1]
@@ -157,7 +157,7 @@ course_fac
 cour = int((course_fac/total_rows)*100)
 
 
-# In[21]:
+# In[20]:
 
 
 fees_factor = data_df['Factors_Fees'].value_counts()[1]
@@ -165,7 +165,7 @@ fees_factor
 fee = int((fees_factor/total_rows)*100)
 
 
-# In[22]:
+# In[21]:
 
 
 rating_fac = data_df['Factors_Rating'].value_counts()[1]
@@ -173,7 +173,7 @@ rating_fac
 rat = int((rating_fac/total_rows)*100)
 
 
-# In[23]:
+# In[22]:
 
 
 rccg_fac = data_df['Factors_RCCG'].value_counts()[1]
@@ -181,7 +181,7 @@ rccg_fac
 rccg = int((rccg_fac/total_rows)*100)
 
 
-# In[24]:
+# In[23]:
 
 
 displeasure_fac = data_df['Factors_Displeasure'].value_counts()[1]
@@ -189,7 +189,7 @@ displeasure_fac
 dis = int((displeasure_fac/total_rows)*100)
 
 
-# In[25]:
+# In[24]:
 
 
 factors = pd.DataFrame({'Factors': ['Location', 'Course of study', 'School fees', 'University rating', 'Association with RCCG', 'Displeasure with previous institution'],
@@ -200,7 +200,7 @@ factors
 
 # ### Influencer
 
-# In[26]:
+# In[25]:
 
 
 yourself_inf = data_df['Influencer_Yourself'].value_counts()[1]
@@ -208,7 +208,7 @@ yourself_inf
 your = int((yourself_inf/total_rows)*100)
 
 
-# In[27]:
+# In[26]:
 
 
 parents_inf = data_df['Influencer_Parents'].value_counts()[1]
@@ -216,7 +216,7 @@ parents_inf
 p = int((parents_inf/total_rows)*100)
 
 
-# In[28]:
+# In[27]:
 
 
 relatives_inf = data_df['Influencer_Relatives'].value_counts()[1]
@@ -224,7 +224,7 @@ relatives_inf
 r = int((relatives_inf/total_rows)*100)
 
 
-# In[29]:
+# In[28]:
 
 
 friends_inf = data_df['Influencer_Friends'].value_counts()[1]
@@ -232,7 +232,7 @@ friends_inf
 f = int((friends_inf/total_rows)*100)
 
 
-# In[30]:
+# In[29]:
 
 
 influencers = pd.DataFrame({'Influence': ['Yourself', 'Parents', 'Relatives', 'Friends'],
@@ -241,7 +241,7 @@ influencers
 #st.write("The Table below shows the percentage of students who were influenced by various individuals to enroll into Redeemer's University (RUN)", influencers)
 
 
-# In[31]:
+# In[30]:
 
 
 Age = pd.DataFrame({'Age range': [0, 1, 2,3,4],
@@ -250,7 +250,7 @@ Age
 #st.write("The table below shows the percentage of student who enrolled into Redeemers U
 
 
-# In[32]:
+# In[31]:
 
 
 rec_count = data_df['Recommendation'].value_counts()[1]
@@ -258,32 +258,32 @@ rec_count = int((rec_count/total_rows)*100)
 rec_count
 
 
-# In[33]:
+# In[32]:
 
 
 data_fill = data_df.fillna(method="bfill", limit=1)
 
 
-# In[34]:
+# In[33]:
 
 
 data_fill.isnull()
 
 
-# In[35]:
+# In[34]:
 
 
 data_fillna = data_fill.fillna(0)
 data_fillna
 
 
-# In[36]:
+# In[35]:
 
 
 data.info()
 
 
-# In[37]:
+# In[36]:
 
 
 data_fill[['FBMS', 'F_ENGR', 'FES', 'F_HUM', 'F_LAW', 'F_MGTSCI', 'FNS', 'F_SOC', 'New_faculty', 'Present_FBMS', 
@@ -294,7 +294,7 @@ data_str = data_fill[['FBMS', 'F_ENGR', 'FES', 'F_HUM', 'F_LAW', 'F_MGTSCI', 'FN
                       'Present_FBMS', 'Present_F_HUM', 'Present_FNS','Present_F_SOC']]
 
 
-# In[38]:
+# In[37]:
 
 
 data_fill[['Gender', 'Admission_year', 'Age_range', 'State_of_residence', 'Admission_means', 'Admission_faculty', 
@@ -312,32 +312,32 @@ data_int = data_fill[['Gender', 'Admission_year', 'Age_range', 'State_of_residen
         'Recommendation', 'enrollment']]
 
 
-# In[39]:
+# In[38]:
 
 
 data_int.info()
 
 
-# In[40]:
+# In[39]:
 
 
 data_str.info()
 
 
-# In[41]:
+# In[40]:
 
 
 data_drop_str = data_df.drop(['FBMS', 'F_ENGR', 'FES', 'F_HUM', 'F_LAW', 'F_MGTSCI', 'FNS', 'F_SOC', 'New_faculty', 
                       'Present_FBMS', 'Present_FES', 'Present_F_HUM', 'Present_FNS','Present_F_SOC'], axis=1)
 
 
-# In[42]:
+# In[41]:
 
 
 data_drop_str
 
 
-# In[43]:
+# In[42]:
 
 
 data_drop_int = data_df.drop(['Gender', 'Admission_year', 'Age_range', 'State_of_residence', 'Admission_means', 'Admission_faculty', 
@@ -347,39 +347,39 @@ data_drop_int = data_df.drop(['Gender', 'Admission_year', 'Age_range', 'State_of
         'Recommendation'], axis=1)
 
 
-# In[44]:
+# In[43]:
 
 
 data_drop_int
 
 
-# In[45]:
+# In[44]:
 
 
 #data_concat = pd.concat([data_drop_str, data_drop_int], axis=1)
 #data_concat
 
 
-# In[46]:
+# In[45]:
 
 
 data_concat = pd.concat([data_str, data_int], axis=1)
 data_concat.info()
 
 
-# In[47]:
+# In[46]:
 
 
 data_concat.columns
 
 
-# In[48]:
+# In[47]:
 
 
 data_concat.describe()
 
 
-# In[49]:
+# In[48]:
 
 
 #LabelEncoding
@@ -390,32 +390,32 @@ data_encode = data_concat.apply(LabelEncoder().fit_transform)
 data_encode
 
 
-# In[50]:
+# In[49]:
 
 
 data_encode[data_encode.columns[0]].count()
 
 
-# In[51]:
+# In[50]:
 
 
 X = data_encode.drop(['enrollment'], axis=1)
 y = data_encode['enrollment']
 
 
-# In[52]:
+# In[51]:
 
 
 y.shape
 
 
-# In[53]:
+# In[52]:
 
 
 data.columns
 
 
-# In[54]:
+# In[53]:
 
 
 columns = ['FBMS', 'F_ENGR', 'FES', 'F_HUM', 'F_LAW', 'F_MGTSCI', 'FNS', 'F_SOC',
@@ -429,20 +429,20 @@ columns = ['FBMS', 'F_ENGR', 'FES', 'F_HUM', 'F_LAW', 'F_MGTSCI', 'FNS', 'F_SOC'
        'Factors_RCCG', 'Factors_Displeasure', 'Recommendation', 'enrollment']
 
 
-# In[55]:
+# In[54]:
 
 
 datum = data_encode.loc[:, columns]
 datum
 
 
+# In[55]:
+
+
+datum.columns
+
+
 # In[56]:
-
-
-datum.info()
-
-
-# In[57]:
 
 
 features = ['FBMS', 'F_ENGR', 'FES', 'F_HUM', 'F_LAW', 'F_MGTSCI', 'FNS', 'F_SOC',
@@ -456,26 +456,42 @@ features = ['FBMS', 'F_ENGR', 'FES', 'F_HUM', 'F_LAW', 'F_MGTSCI', 'FNS', 'F_SOC
        'Factors_RCCG', 'Factors_Displeasure', 'Recommendation',]
 
 
+# In[57]:
+
+
+temp = datum.drop([
+    'Present_F_ENGR', 'Present_FES', 'Present_F_LAW',  'Admission_year', 
+    'Present_F_MGTSCI', 'FBMS', 'F_ENGR', 'FES', 'F_HUM', 'F_LAW', 'F_MGTSCI', 'FNS', 'F_SOC',
+       'New_faculty', 'Present_FBMS', 'Present_F_HUM', 'Present_FNS',
+       'Present_F_SOC', 'State_of_residence'], axis = 1)
+
+
 # In[58]:
 
 
-X= datum.iloc [:, : -1]
-y= datum.iloc [:, -1 :]
+temp.columns
 
 
 # In[59]:
 
 
-y
+X= temp.iloc [:, : -1]
+y= temp.iloc [:, -1 :]
 
 
 # In[60]:
 
 
-X.shape, y.shape
+y
 
 
 # In[61]:
+
+
+X.shape, y.shape
+
+
+# In[62]:
 
 
 from mlxtend.feature_selection import SequentialFeatureSelector as sfs
@@ -483,23 +499,23 @@ from sklearn.linear_model import LinearRegression
 
 lreg = LinearRegression()
 
-sfs1 = sfs(lreg, k_features=5, forward=False, verbose=1, scoring='neg_mean_squared_error')
+sfs1 = sfs(lreg, k_features=7, forward=False, verbose=1, scoring='neg_mean_squared_error')
 
 
-# In[62]:
+# In[63]:
 
 
 sfs1 = sfs1.fit(X, y)
 
 
-# In[63]:
+# In[64]:
 
 
 feat_names = list(sfs1.k_feature_names_)
 feat_names
 
 
-# In[64]:
+# In[65]:
 
 
 new_data = data_encode[feat_names]
@@ -508,7 +524,7 @@ new_data['enrollment'] = data_encode['enrollment']
 new_data.head()
 
 
-# In[65]:
+# In[66]:
 
 
 X= new_data.iloc [:, : -1]
@@ -519,14 +535,14 @@ y= new_data.iloc [:, -1 :]
 
 # #### Split Data into Train and Test
 
-# In[66]:
+# In[67]:
 
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, confusion_matrix
 
 
-# In[67]:
+# In[68]:
 
 
 #Data Preprocessing
@@ -534,7 +550,7 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state=10)
 
 
-# In[68]:
+# In[69]:
 
 
 X_train.shape, y_train.shape, X_test.shape, y_test.shape 
@@ -542,13 +558,13 @@ X_train.shape, y_train.shape, X_test.shape, y_test.shape
 
 # #### Trainning the model
 
-# In[69]:
+# In[70]:
 
 
 model = LogisticRegression(solver='liblinear', C=8.0, random_state=100)
 
 
-# In[70]:
+# In[71]:
 
 
 model.fit(X_train, y_train)
@@ -556,14 +572,14 @@ model.fit(X_train, y_train)
 
 # #### Predict with test data 
 
-# In[71]:
+# In[72]:
 
 
 y_pred_test = model.predict(X_test)
 y_pred_train = model.predict(X_train)
 
 
-# In[72]:
+# In[73]:
 
 
 model.classes_
@@ -571,7 +587,7 @@ model.classes_
 
 # #### Model Evaluation 
 
-# In[73]:
+# In[74]:
 
 
 # Confusion Matrix
@@ -580,25 +596,25 @@ cnf_matrix = metrics.confusion_matrix(y_test, y_pred_test)
 cnf_matrix
 
 
-# In[74]:
+# In[94]:
 
 
 print('----- Evaluation on Training Data ----------------------')
-score_train = model.score(X_train, y_train)
-print('Accuracy Score: ', score_train)
+# score_train = model.score(X_train, y_train)
+# print('Accuracy Score: ', score_train)
 # classification report to evaluate the model
 print(classification_report(y_train, y_pred_train))
 print('--------------------------------------------------------')
 
 print('----- Evaluation on Test Data --------------------------')
-score_test = model.score(X_test, y_test)
-print('Accuracy Score: ', score_test)
+# score_test = model.score(X_test, y_test)
+# print('Accuracy Score: ', score_test)
 # classification report to evaluate the model
 print(classification_report(y_test, y_pred_test))
 print('--------------------------------------------------------')
 
 
-# In[75]:
+# In[96]:
 
 
 print("Accuracy: {:.2f}" .format(metrics.accuracy_score(y_test, y_pred_test)), '%')
@@ -606,7 +622,7 @@ print("Precision: {:.2f}".format(metrics.precision_score(y_test, y_pred_test)), 
 print("Recall: {:.2f}".format(metrics.recall_score(y_test, y_pred_test)), '%')
 
 
-# In[76]:
+# In[77]:
 
 
 import numpy as np
@@ -626,7 +642,7 @@ plt.ylabel('Actual label')
 plt.xlabel('Predicted label')
 
 
-# In[77]:
+# In[78]:
 
 
 y_pred_proba = model.predict_proba(X_test)[::,1]
@@ -641,20 +657,20 @@ plt.show()
 
 # #### Split Data into Train and Test
 
-# In[78]:
+# In[79]:
 
 
 from sklearn.svm import SVC
 
 
-# In[79]:
+# In[80]:
 
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20)
 #self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(X, y, shuffle=False, stratify=None, train_size=training_percent)
 
 
-# In[80]:
+# In[81]:
 
 
 X_train.shape, y_train.shape, X_test.shape, y_test.shape 
@@ -662,22 +678,22 @@ X_train.shape, y_train.shape, X_test.shape, y_test.shape
 
 # #### Trainning the model
 
-# In[81]:
+# In[82]:
 
 
 svclassifier = SVC(kernel='rbf', C = 100)
 
 
-# In[82]:
+# In[83]:
 
 
 svclassifier.fit(X_train, y_train)
 
 
-# In[220]:
+# In[98]:
 
 
-Save the Model
+#Save the Model
 svc_pickle = open('enrol_pred_model.pickle', 'wb') 
 pickle.dump(svclassifier, svc_pickle) 
 svc_pickle.close()
@@ -685,7 +701,7 @@ svc_pickle.close()
 
 # #### Predict with test data 
 
-# In[86]:
+# In[85]:
 
 
 y_pred_test = svclassifier.predict(X_test)
@@ -694,7 +710,7 @@ y_pred_train = svclassifier.predict(X_train)
 
 # #### Model Evaluation 
 
-# In[87]:
+# In[86]:
 
 
 # Confusion Matrix
@@ -702,25 +718,25 @@ from sklearn.metrics import classification_report, confusion_matrix
 print(confusion_matrix(y_test, y_pred_test))
 
 
-# In[96]:
+# In[93]:
 
 
 print('----- Evaluation on Training Data ----------------------')
-score_train = svclassifier.score(X_train, y_train)
-print('Accuracy Score: ', score_train)
+#score_train = model.score(X_train, y_train)
+#print('Accuracy Score: ', score_train)
 # classification report to evaluate the model
 print(classification_report(y_train, y_pred_train))
 print('--------------------------------------------------------')
 
 print('----- Evaluation on Test Data --------------------------')
-score_test = svclassifier.score(X_test, y_test)
-print('Accuracy Score: ', score_test)
+#score_test = model.score(X_test, y_test)
+#print('Accuracy Score: ', score_test)
 # classification report to evaluate the model
 print(classification_report(y_test, y_pred_test))
 print('--------------------------------------------------------')
 
 
-# In[97]:
+# In[88]:
 
 
 print("Accuracy: {:.2f}" .format(metrics.accuracy_score(y_test, y_pred_test)), '%')
@@ -728,7 +744,7 @@ print("Precision: {:.2f}".format(metrics.precision_score(y_test, y_pred_test)), 
 print("Recall: {:.2f}".format(metrics.recall_score(y_test, y_pred_test)), '%')
 
 
-# In[98]:
+# In[89]:
 
 
 from sklearn.metrics import confusion_matrix
@@ -736,7 +752,8 @@ cm = confusion_matrix(y_test,y_pred_test)
 accuracy = float(cm.diagonal().sum())/len(y_test)
 
 
-# In[99]:
+# In[90]:
+
 
 
 import numpy as np
@@ -756,7 +773,7 @@ plt.ylabel('Actual label')
 plt.xlabel('Predicted label')
 
 
-# In[100]:
+# In[91]:
 
 
 y_pred_proba = model.predict_proba(X_test)[::,1]
@@ -765,12 +782,4 @@ auc = metrics.roc_auc_score(y_test, y_pred_proba)
 plt.plot(fpr,tpr,label="data 1, auc="+str(auc))
 plt.legend(loc=4)
 plt.show()
-
-
-# In[95]:
-
-
-trest = [1, 0, 1, 1, 0]
-new = np.reshape(trest, (1, -1))
-svclassifier.predict(new)
 
