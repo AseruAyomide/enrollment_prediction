@@ -31,10 +31,10 @@ st.subheader("Enter details below")
 
 my_form = st.form(key='form1')
 
-gender = my_form.selectbox("In this new session, which gender increased?",
+gender = my_form.selectbox("In this new session, which gender saw the most increase?",
      ('Male', 'Female'))
 
-means = my_form.selectbox("Which admissions method was most popular during the new session??",
+means = my_form.selectbox("Which admissions method was most popular during the new session?",
      ("Jamb/Utme", "Direct entry from A'levels", "Transfer from another institution"))
 
 yourself = my_form.selectbox("Does the school have means to personally engage students?",
