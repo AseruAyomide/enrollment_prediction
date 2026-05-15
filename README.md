@@ -133,10 +133,10 @@ It was then integrated into a Streamlit application for real-time predictions.
 
 The deployed web app allows users to:
 
-✅ Select enrollment-related factors through dropdown menus
-✅ Submit institutional scenarios
-✅ Receive predictions on whether enrollment may increase or decline
-✅ Test multiple admission scenarios
+* Select enrollment-related factors through dropdown menus
+* Submit institutional scenarios
+* Receive predictions on whether enrollment may increase or decline
+* Test multiple admission scenarios
 
 ## Project Structure
 ```
