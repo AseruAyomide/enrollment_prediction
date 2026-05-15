@@ -91,9 +91,9 @@ This data helped provide historical context for model training.
 Two machine learning models were trained and evaluated:
 
 ### Logistic Regression
-Accuracy: ### 80%
+Accuracy: 80%
 ### Support Vector Machine (SVM)
-Accuracy: ### 86%
+Accuracy: 86%
 
 Since SVM performed better, it was selected as the final production model.
 
